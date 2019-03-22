@@ -1,0 +1,15 @@
+{
+  "pi": {
+    "name": "LifeOfPi",
+    "description": "A simple WoT-connected Raspberry Pi",
+    "port": 3000,
+    "sensors": {
+      "pir": {
+        "name": "Passive Infrared",
+        "description": "A passive infrared sensor. When 'true' it detects motion",
+        "value": true,
+        "gpio": 4
+      }
+    }
+  }
+}

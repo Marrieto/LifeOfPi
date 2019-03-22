@@ -1,0 +1,25 @@
+{
+  "name": "wot-server",
+  "version": "1.0.0",
+  "description": "A simple wot-server for Raspberry Pi",
+  "main": "wotServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Pi",
+    "PIR",
+    "Web",
+    "of",
+    "Things"
+  ],
+  "author": "Simon Bååth, Martin Lindahl",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4"
+  },
+  "optionalDependencies": {
+    "onoff": "^4.1.1"
+  }
+}
