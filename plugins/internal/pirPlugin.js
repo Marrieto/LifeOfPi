@@ -1,12 +1,11 @@
-let resources = require("./../../resources/model");
+var resources = require("./../../resources/model");
 
-let interval;
-let sensor;
-const model = resources.pi.sensors.pir;
-const pluginName = resources.pi.sensors.pir.pluginName;
-let localParams = { simulate: false, frequency: 2000 };
+var interval, sensor;
+var model = resources.pi.sensors.pir;
+var pluginName = resources.pi.sensors.pir.name;
+var localParams = { simulate: false, frequency: 2000 };
 
-exports.start = params => {
+exports.start = function(params) {
   localParams = params;
   if (localParams.simulate) {
     simulate();
@@ -14,18 +13,17 @@ exports.start = params => {
     connectHardware();
   }
 };
-
-exports.stop = () => {
+exports.stop = function() {
   if (localParams.simulate) {
     clearInterval(interval);
   } else {
     sensor.unexport();
   }
-  console.info("%s plugin stopped", pluginName);
+  console.info("%s plugin stopped!", pluginName);
 };
 
 function connectHardware() {
-  let Gpio = require("onoff").Gpio;
+  var Gpio = require("onoff").Gpio;
   sensor = new Gpio(model.Gpio, "in", "both");
   sensor.watch((err, value) => {
     if (err) exit(err);

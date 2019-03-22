@@ -16,8 +16,11 @@
   "author": "Simon Bååth, Martin Lindahl",
   "license": "ISC",
   "dependencies": {
+    "base64-img": "^1.0.4",
     "cors": "^2.8.5",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pi-camera": "^1.2.1",
+    "ws": "^2.3.1"
   },
   "optionalDependencies": {
     "onoff": "^4.1.1"
